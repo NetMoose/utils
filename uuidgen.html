@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+		<link rel="shortcut icon" href="https://image.flaticon.com/icons/png/512/1086/1086470.png" type="image/x-icon">
+        <title>UUID-generator</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Glory&display=swap" rel="stylesheet"> 
+	<body>
+        <h1 id="genuuid" style="font-family: 'Glory', sans-serif;"></h1>
+    </body>
+	<script>
+		function uuidv4() {
+			return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+			  (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+			);
+		}
+		document.getElementById("genuuid").textContent=uuidv4();
+</script>
+</html>
